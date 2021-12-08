@@ -1,0 +1,34 @@
+aws rds create-db-instance --db-name db0422mujahed --engine MySQL \
+--db-instance-identifier inst0422mujahed --backup-retention-period 3 \
+--db-instance-class db.t2.micro --allocated-storage 5 --no-publicly-accessible \
+--master-username admin --master-user-password admin1234
+        OR
+aws rds create-db-instance --db-name db0422mujahed --engine MySQL --db-instance-identifier inst0422mujahed --backup-retention-period 3 --db-instance-class db.t2.micro --allocated-storage 5 --no-publicly-accessible --master-username admin --master-user-password admin1234
+
+
+pip install pymysql
+
+cd envBoto3\Lib\site-packages
+
+zip -r ../../../../my-deployment-package.zip .
+
+cd ../../../../
+
+Add app.py(python files)
+zip -g my-deployment-package.zip lambda_function.py
+
+aws lambda create-function --function-name fn0422mujahedv2 \
+--zip-file fileb://my-deployment-package.zip --handler app.handler --runtime python3.8 \
+--role arn:aws:iam::421308774925:role/rl0422mujahed
+
+
+aws lambda create-function --function-name fn0422mujahedv2 --zip-file fileb://my-deployment-package.zip --handler app.handler --runtime python3.8 --role arn:aws:iam::421308774925:role/rl0422mujahed
+
+aws lambda update-function-code --function-name fn0422mujahedv2 --zip-file fileb://my-deployment-package.zip
+
+
+aws lambda invoke --function-name my-function out --log-type Tail
+
+aws lambda get-function --function-name my-function
+
+aws lambda delete-function --function-name my-function

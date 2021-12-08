@@ -1,0 +1,4 @@
+{
+    "python.linting.enabled": true,
+    "python.defaultInterpreterPath": "E:\\Cloud\\AWS\\AWS_PPTs\\Lambda\\S3LambdaRDS\\envBoto3\\Scripts\\python.exe"
+}
